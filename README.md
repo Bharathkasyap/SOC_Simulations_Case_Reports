@@ -92,11 +92,11 @@ Each alert below is presented in **point-wise format**, detailing the source, na
 
 Below is a list of investigated alerts, organized for clarity:
 
-1. **Alert 001:** Suspicious URL Detected from Internal Email (Status: Escalated – Phishing Confirmed)
-2. **Alert 002:** Outbound Connection to Blacklisted IP (Status: Escalated – Malware Beacon)
-3. **Alert 003:** User Login from Multiple Geo-locations (Status: False Positive – VPN Verified)
-4. **Alert 004:** Large File Transfer to External Cloud Drive (Status: Under Review)
-5. **Alert 005:** Unauthorized Registry Change (Status: True Positive – Persistence Mechanism Identified)
+1. **[Alert 1: Suspicious URL Detected from Internal Email (Status: Escalated – Phishing Confirmed)]()**
+2. **Alert 2:** Outbound Connection to Blacklisted IP (Status: Escalated – Malware Beacon)
+3. **Alert 3:** User Login from Multiple Geo-locations (Status: False Positive – VPN Verified)
+4. **Alert 4:** Large File Transfer to External Cloud Drive (Status: Under Review)
+5. **Alert 5:** Unauthorized Registry Change (Status: True Positive – Persistence Mechanism Identified)
 
 > Each alert report is documented in its own folder under `/alerts/` with screenshots, logs, SIEM queries, and conclusions.
 
