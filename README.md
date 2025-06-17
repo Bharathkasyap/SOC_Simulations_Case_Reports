@@ -105,10 +105,15 @@ Below is a list of investigated alerts, organized for clarity:
 ## 📂 Folder Structure
 
 SOC-Alert-Investigation/
+
 │
+
 ├── alerts/
+
 │ ├── alert1/
+
 │ ├── alert2/
+
 │ └── ...
 └── README.md ← You are here
 
@@ -118,7 +123,7 @@ SOC-Alert-Investigation/
 
 ## 📢 Note to Viewers
 
-This project is part of an **educational SOC simulation** using publicly available tools and platforms like TryHackMe. The alerts are real in format, synthetic in generation, and the investigation methodology mirrors actual industry practices to help learners grow into capable analysts.
+This project is part of an **SOC simulation** using publicly available tools and platforms like TryHackMe. The alerts are real in format, synthetic in generation, and the investigation methodology mirrors actual industry practices to help viewers grow into capable analysts.
 
 ---
 
