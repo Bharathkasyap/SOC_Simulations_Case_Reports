@@ -107,17 +107,12 @@ Below is a list of investigated alerts, organized for clarity:
 SOC-Alert-Investigation/
 │
 ├── alerts/
-│ ├── alert-001/
-│ ├── alert-002/
+│ ├── alert1/
+│ ├── alert2/
 │ └── ...
-│
-├── screenshots/
-├── docs/
 └── README.md ← You are here
 
-yaml
-Copy
-Edit
+
 
 ---
 
