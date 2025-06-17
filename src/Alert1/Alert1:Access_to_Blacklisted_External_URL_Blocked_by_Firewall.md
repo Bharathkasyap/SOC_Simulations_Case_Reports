@@ -4,6 +4,10 @@
 
 This report documents the analysis and resolution of a firewall alert triggered when a user from the internal network attempted to access a URL that matched a known threat intelligence feed or organizational blacklist. The firewall successfully blocked the request and prevented any communication with the external host.
 
+<div align="center">
+<img src =src/Alert1/AlertAssignment.png width="300">
+</div>
+ </br>
 ---
 
 ## 📅 Time of Activity
@@ -38,10 +42,28 @@ This report documents the analysis and resolution of a firewall alert triggered 
 ## 🔬 Threat Intelligence Analysis
 
 * **VirusTotal:** 2 out of 97 vendors flagged the URL as **phishing** (Criminal IP and PhishLabs).
+  <div align="center">
+<img src =src/Alert1/Findings2.png width="300">
+</div>
+ </br>
+ 
 * **ANY.RUN Sandbox:** Link resulted in a 404 error, no malware payload or command-and-control behavior observed.
+  <div align="center">
+<img src =src/Alert1/Findings1.png width="300">
+</div>
+ </br>
+  
 * **URLScan.io:** No malicious redirection, DNS resolves to Bitly hosted on Google Cloud Platform.
+  <div align="center">
+<img src =src/Alert1/Findings3.png width="300">
+</div>
+ </br>
+  
 * **AbuseIPDB:** No reports found for the IP address or URL.
-
+  <div align="center">
+<img src =src/Alert1/Findings4.png width="300">
+</div>
+ </br>
 ---
 
 ## 🛡️ Final Classification
