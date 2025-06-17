@@ -7,6 +7,7 @@ This report documents the analysis and resolution of a firewall alert triggered 
 <div align="center">
 <img src=src/Alert1/AlertAssignment.png width="300">
 </div>
+
 ---
 
 ## 📅 Time of Activity
