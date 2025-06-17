@@ -5,7 +5,7 @@
 This report documents the analysis and resolution of a firewall alert triggered when a user from the internal network attempted to access a URL that matched a known threat intelligence feed or organizational blacklist. The firewall successfully blocked the request and prevented any communication with the external host.
 
 <div align="center">
-  <img src="SOC_Simulations_Case_Reports / src / Alert1 / AlertAssignment.png" width="300" />
+  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert1/AlertAssignment.png" width="300" />
 </div>
 
 <br>
