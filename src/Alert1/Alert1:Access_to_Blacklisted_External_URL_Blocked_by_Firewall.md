@@ -8,6 +8,8 @@ This report documents the analysis and resolution of a firewall alert triggered 
 <img src=src/Alert1/AlertAssignment.png width="300">
 </div>
 
+<br>
+
 ---
 
 ## 📅 Time of Activity
