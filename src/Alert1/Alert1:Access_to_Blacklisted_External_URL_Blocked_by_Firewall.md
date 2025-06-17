@@ -137,56 +137,50 @@ These queries help in detecting whether the user attempted to access other malic
 
 > In our case, we didn't find any events or statistics with them
 ---
-Time of activity:
+
+## 📝 Final Case Report Submitted
+
+### Time of activity:
 June 17th 2025, 22:03:11 UTC
 
-List of Affected Entities:
+### List of Affected Entities:
 Source IP: 10.20.2.17
 Destination IP: 67.199.248.11
 URL: http://bit.ly/3sHkX3da12340
 
-Reason for Classifying as True Positive:
+### Reason for Classifying as True Positive:
 
-The firewall alert was triggered due to an outbound connection attempt to a blacklisted URL, which is a valid detection based on organizational security policy.
+- The firewall alert was triggered due to an outbound connection attempt to a blacklisted URL, which is a valid detection based on organizational security policy.
+- VirusTotal classified the URL as malicious by two security vendors (Criminal IP and PhishLabs), identifying phishing behavior.
+- Although the URL is no longer active and returns a 404 error, it was likely flagged in earlier campaigns and was still present in reputation feeds at the time of access.
+- The use of a URL shortener (bit.ly) for redirection further supports the phishing potential of the link.
 
-VirusTotal classified the URL as malicious by two security vendors (Criminal IP and PhishLabs), identifying phishing behavior.
-
-Although the URL is no longer active and returns a 404 error, it was likely flagged in earlier campaigns and was still present in reputation feeds at the time of access.
-
-The use of a URL shortener (bit.ly) for redirection further supports the phishing potential of the link.
-
-Reason for Escalating the Alert:
+### Reason for Escalating the Alert:
 No escalation required. The firewall successfully blocked the request. Sandbox analysis confirmed no active threat behavior or malware execution. The destination was unreachable at the time of testing.
 
-Recommended Remediation Actions:
+### Recommended Remediation Actions:
+- Notify the user associated with the source IP and provide phishing awareness guidance.
+- Monitor the source system for any repeated access to blocked or suspicious domains.
+- Continue threat feed updates to maintain detection accuracy against similar domains.
+- No endpoint isolation or forensics needed as no impact was observed.
 
-Notify the user associated with the source IP and provide phishing awareness guidance.
+### List of Attack Indicators:
+- URL: http://bit.ly/3sHkX3da12340
+- Destination IP: 67.199.248.11
+- Application: web-browsing
+- Action Taken: blocked
+- Rule: Blocked Websites
+- VirusTotal vendors marking as phishing: Criminal IP, PhishLabs
+- Sandbox result: No threat behavior detected, URL inactive
 
-Monitor the source system for any repeated access to blocked or suspicious domains.
-
-Continue threat feed updates to maintain detection accuracy against similar domains.
-
-No endpoint isolation or forensics needed as no impact was observed.
-
-List of Attack Indicators:
-
-URL: http://bit.ly/3sHkX3da12340
-
-Destination IP: 67.199.248.11
-
-Application: web-browsing
-
-Action Taken: blocked
-
-Rule: Blocked Websites
-
-VirusTotal vendors marking as phishing: Criminal IP, PhishLabs
-
-Sandbox result: No threat behavior detected, URL inactive
-
-Does this alert require escalation?
+### Does this alert require escalation?
 No
+
+---
 
 ## 📌 Status
 
 * **Resolved – True Positive (No Risk Observed)**
+
+---
+
