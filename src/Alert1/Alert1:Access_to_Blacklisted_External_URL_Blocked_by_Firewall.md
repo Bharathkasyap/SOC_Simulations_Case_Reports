@@ -135,6 +135,7 @@ index=webproxy OR index=dns_logs source_ip="10.20.2.17"
 
 These queries help in detecting whether the user attempted to access other malicious URLs or triggered additional alerts. In this case, since logs were not available, simulated analysis confirmed no further activity.
 
+> In our case, we didn't find any events or statistics with them
 ---
 Time of activity:
 June 17th 2025, 22:03:11 UTC
