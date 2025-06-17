@@ -45,28 +45,32 @@ This report documents the analysis and resolution of a firewall alert triggered 
 ## 🔬 Threat Intelligence Analysis
 
 * **VirusTotal:** 2 out of 97 vendors flagged the URL as **phishing** (Criminal IP and PhishLabs).
-  <div align="center">
-<img src =src/Alert1/Findings2.png width="300">
+<div align="center">
+<img src ="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert1/Findings2.png" width="800"/>
 </div>
- </br>
+
+</br>
  
 * **ANY.RUN Sandbox:** Link resulted in a 404 error, no malware payload or command-and-control behavior observed.
-  <div align="center">
-<img src =src/Alert1/Findings1.png width="300">
+<div align="center">
+<img src ="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert1/Findings1.png" width="800"/>
 </div>
- </br>
+
+</br>
   
 * **URLScan.io:** No malicious redirection, DNS resolves to Bitly hosted on Google Cloud Platform.
-  <div align="center">
-<img src =src/Alert1/Findings3.png width="300">
+<div align="center">
+<img src ="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert1/Findings3.png" width="800"/>
 </div>
- </br>
+
+</br>
   
 * **AbuseIPDB:** No reports found for the IP address or URL.
-  <div align="center">
-<img src =src/Alert1/Findings4.png width="300">
+<div align="center">
+<img src ="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert1/Findings4.png" width="800"/>
 </div>
- </br>
+
+</br>
 ---
 
 ## 🛡️ Final Classification
