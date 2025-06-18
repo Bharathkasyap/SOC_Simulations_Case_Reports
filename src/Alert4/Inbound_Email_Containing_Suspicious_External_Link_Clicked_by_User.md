@@ -66,19 +66,19 @@ June 18th 2025 between 01:17:23 and 01:18:32 UTC
 
 ---
 
-<table>
-  <tr>
-    <td><img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs2.png" width="550"></td>
-    <td><img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs1.png" width="550"></td>
-       
-</table>
-
 ## 🧪 Splunk Log-Based Confirmation of User Click
 After reviewing the logs collected via Splunk, it was confirmed that the inbound phishing email containing the suspicious domain https://m1crosoftsupport.co/login was successfully delivered to the user's inbox at 01:17:23 UTC. Shortly thereafter, at 01:18:32 UTC, firewall logs captured via Splunk showed that the same user device (10.20.2.25) initiated an outbound HTTPS connection to the phishing domain.
 
 This timeline clearly demonstrates that the user clicked on the embedded phishing link, resulting in successful network communication with the external site. Although the phishing domain was later found to be inactive through external sandbox and reputation tools, the user interaction with the infrastructure is an indication of real exposure.
 
 This behavior meets the threshold for a True Positive classification and warrants escalation, as user credentials may have been compromised during the short window when the phishing domain was accessible.
+
+<table>
+  <tr>
+    <td><img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs2.png" width="550"></td>
+    <td><img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs1.png" width="550"></td>
+       
+</table>
 
 ---
 
