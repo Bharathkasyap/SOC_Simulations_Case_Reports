@@ -129,3 +129,52 @@ This behavior meets the threshold for a True Positive classification and warrant
 
 ---
 
+## ✅ Final Incident Report (Format as per the SOC system)
+
+### Is it a True Positive:
+Yes
+
+### Time of activity:
+June 18th 2025 between 01:17:23 and 01:18:32 UTC
+
+### List of Affected Entities:
+- Email Recipient: c.allen@thetrydaily.thm
+- Sender: no-reply@m1crosoftsupport.co
+- Phishing URL Clicked: https://m1crosoftsupport.co/login
+- Source Device IP: 10.20.2.25
+- Destination IP: 45.148.10.131 (Phishing server)
+
+### Reason for Classifying as True Positive:
+- The email originated from a typo-squatted domain impersonating Microsoft (m1crosoftsupport.co).
+- The message contained social engineering language encouraging urgent action.
+- The recipient clicked on the phishing link — confirmed via firewall logs showing allowed HTTP(S) traffic to the phishing domain.
+- Email content and sender are not part of any legitimate workflow or known contact, supporting its classification as malicious.
+
+### Reason for Escalating the Alert:
+- This is now an active compromise attempt. The user interaction could have resulted in credential theft or session hijacking.
+- The phishing infrastructure may still be collecting data despite currently showing inactive pages.
+- Similar emails may have been sent to other employees using the same spoofing infrastructure.
+- Response and awareness are required from Incident Response, IT, and Security Awareness teams.
+
+
+### Recommended Remediation Actions:
+- Immediately initiate credential reset for the affected user.
+- Perform endpoint scan on the user’s machine (IP: 10.20.2.25) for any dropped malware or changes.
+- Add phishing domain and destination IP to blocklists in email and web proxy.
+- Perform email sweep across the domain to identify similar phishing attempts.
+- Educate the user on phishing techniques and impersonation threats.
+- Add a detection rule to alert on future access to typo-squatted domains mimicking Microsoft.
+
+### List of Attack Indicators:
+- Spoofed Domain: m1crosoftsupport.co
+- URL Clicked: https://m1crosoftsupport.co/login
+- Destination IP: 45.148.10.131
+- Sender: no-reply@m1crosoftsupport.co
+- Subject: Unusual Sign-In Activity on Your Microsoft Account
+- Source Device IP: 10.20.2.25
+- Protocol: HTTPS (TCP Port 443)
+- Email Received at: 2025-06-18T00:17:23.962
+- Click Registered at: 2025-06-18T00:18:32.962
+
+### Does this alert require escalation?
+Yes
