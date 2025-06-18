@@ -1,5 +1,5 @@
 # Alert 4: Inbound Email Containing Suspicious External Link Clicked by User
----
+
 
 ## 📘 Scenario Explanation:
 This alert was triggered when an inbound phishing email reached the user’s mailbox, crafted to appear as a security notification from Microsoft. The sender used a typo-squatted domain (`m1crosoftsupport.co`) to impersonate Microsoft and included a malicious link urging the user to “Review Activity.”
