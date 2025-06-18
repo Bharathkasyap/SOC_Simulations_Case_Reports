@@ -66,13 +66,6 @@ June 18th 2025 between 01:17:23 and 01:18:32 UTC
 
 ---
 
-## ✅ Reason for Classifying as True Positive:
-- The domain `m1crosoftsupport.co` is a **malicious impersonation** of Microsoft using typo-squatting.
-- The email employed **urgency-based social engineering** to encourage user action.
-- **Firewall logs confirmed** that the user clicked the link and traffic to the phishing domain was allowed.
-- Despite the domain appearing inactive now, it was likely part of a **live phishing infrastructure** when accessed.
-- The attack was **not simulated or internally generated**, indicating a real threat.
-
 <table>
   <tr>
     <td><img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs2.png" width="550"></td>
@@ -80,20 +73,25 @@ June 18th 2025 between 01:17:23 and 01:18:32 UTC
        
 </table>
 
-<div align="center">
-  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs2.png" width="450" style="margin-right: 20px;">
-  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs1.png" width="450">
-</div>
+## 🧪 Splunk Log-Based Confirmation of User Click
+After reviewing the logs collected via Splunk, it was confirmed that the inbound phishing email containing the suspicious domain https://m1crosoftsupport.co/login was successfully delivered to the user's inbox at 01:17:23 UTC. Shortly thereafter, at 01:18:32 UTC, firewall logs captured via Splunk showed that the same user device (10.20.2.25) initiated an outbound HTTPS connection to the phishing domain.
 
+This timeline clearly demonstrates that the user clicked on the embedded phishing link, resulting in successful network communication with the external site. Although the phishing domain was later found to be inactive through external sandbox and reputation tools, the user interaction with the infrastructure is an indication of real exposure.
 
-<div align="center">
-  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs2.png" width="450" />
-</div>
+This behavior meets the threshold for a True Positive classification and warrants escalation, as user credentials may have been compromised during the short window when the phishing domain was accessible.
 
-<div align="center">
-  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs1.png" width="450" />
-</div>
 ---
+
+
+## ✅ Reason for Classifying as True Positive:
+- The domain `m1crosoftsupport.co` is a **malicious impersonation** of Microsoft using typo-squatting.
+- The email employed **urgency-based social engineering** to encourage user action.
+- **Firewall logs confirmed** that the user clicked the link and traffic to the phishing domain was allowed.
+- Despite the domain appearing inactive now, it was likely part of a **live phishing infrastructure** when accessed.
+- The attack was **not simulated or internally generated**, indicating a real threat.
+
+---
+
 
 ## 🚨 Reason for Escalating the Alert:
 - User interaction with a phishing link means **potential credential compromise**.
