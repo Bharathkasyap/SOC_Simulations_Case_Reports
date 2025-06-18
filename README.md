@@ -93,10 +93,8 @@ Each alert below is presented in **point-wise format**, detailing the source, na
 Below is a list of investigated alerts, organized for clarity:
 
 1. **[Alert 1: Suspicious URL Detected Blocked by Firewall (Status: Escalated – Phishing Confirmed)](https://github.com/Bharathkasyap/SOC_Simulations_Case_Reports/blob/main/src/Alert1/Alert1%3AAccess_to_Blacklisted_External_URL_Blocked_by_Firewall.md)**
-2. **Alert 2:** Outbound Connection to Blacklisted IP (Status: Escalated – Malware Beacon)
-3. **Alert 3:** User Login from Multiple Geo-locations (Status: False Positive – VPN Verified)
-4. **Alert 4:** Large File Transfer to External Cloud Drive (Status: Under Review)
-5. **Alert 5:** Unauthorized Registry Change (Status: True Positive – Persistence Mechanism Identified)
+2. **[Alert 4: Inbound Email Containing Suspicious External Link clicked by the user (Escalated)](https://github.com/Bharathkasyap/SOC_Simulations_Case_Reports/blob/main/src/Alert4/Inbound_Email_Containing_Suspicious_External_Link_Clicked_by_User.md)**
+
 
 > Each alert report is documented in its own folder under `/alerts/` with screenshots, logs, SIEM queries, and conclusions.
 
