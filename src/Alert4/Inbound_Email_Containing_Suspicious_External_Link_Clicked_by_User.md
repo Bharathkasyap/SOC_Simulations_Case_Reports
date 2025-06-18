@@ -4,10 +4,10 @@
 ## 📘 Scenario Explanation:
 This alert was triggered when an inbound phishing email reached the user’s mailbox, crafted to appear as a security notification from Microsoft. The sender used a typo-squatted domain (`m1crosoftsupport.co`) to impersonate Microsoft and included a malicious link urging the user to “Review Activity.”
 
-Upon review of the **firewall logs**, it was observed that the internal user device (`10.20.2.25`) made an outbound HTTPS connection to the phishing domain (`45.148.10.131`) confirming that the link was clicked. Although the phishing site currently returns a DNS resolution failure, this does not negate the threat it posed at the time of delivery.
+Upon review of the **firewall logs**, it was observed that the internal user device (`10.20.2.25`) made an outbound HTTPS connection to the phishing domain (`45.148.10.131`), confirming that the link was clicked. Although the phishing site currently returns a DNS resolution failure, this does not negate the threat it posed at the time of delivery.
 
 <div align="center">
-  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/AlertAssignment.png" width="800" />
+  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/AssignedAlert.png" width="800" />
 </div>
 
 <br>
@@ -34,19 +34,35 @@ June 18th 2025 between 01:17:23 and 01:18:32 UTC
 - Result: **0/97 vendors flagged the domain** as malicious.
 - However, the domain was registered in a suspicious pattern (`m1crosoftsupport.co`) clearly intended to mimic Microsoft.
 - Link used: `https://m1crosoftsupport.co/login`
+<div align="center">
+  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/TotalVirus.png" width="800" />
+</div>
 
+
+<br>
 ### ✅ AnyRun Sandbox:
 - URL rendered unreachable.
 - Confirmed that the domain could not serve a payload.
 - However, the infrastructure used appears to have been **dismantled or expired**, which often happens **post-campaign**.
+<div align="center">
+  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/AnyVirus.png" width="800" />
+</div>
 
 ### ✅ URLScan.io:
 - Response: **DNS Error** - could not resolve domain.
 - Indicates the domain was taken down, but might have been active at the time the email was sent.
+- 
+<div align="center">
+  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/URLScanIO.png" width="800" />
+</div>
 
 ### ✅ AbuseIPDB:
 - Result: **404 Page Not Found**.
 - No listings associated with the IP at present, but this does not rule out abuse during its active time.
+
+<div align="center">
+  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/AbuseIPDB.png" width="800" />
+</div>
 
 ---
 
@@ -56,6 +72,13 @@ June 18th 2025 between 01:17:23 and 01:18:32 UTC
 - **Firewall logs confirmed** that the user clicked the link and traffic to the phishing domain was allowed.
 - Despite the domain appearing inactive now, it was likely part of a **live phishing infrastructure** when accessed.
 - The attack was **not simulated or internally generated**, indicating a real threat.
+
+<table>
+  <tr>
+    <td><img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs2.png" width="250"></td>
+    <td><img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs1.png" width="250"></td>
+       
+</table>
 
 ---
 
