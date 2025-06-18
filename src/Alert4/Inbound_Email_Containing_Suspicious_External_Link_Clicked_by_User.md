@@ -82,6 +82,74 @@ This behavior meets the threshold for a True Positive classification and warrant
 
 ---
 
+### SIEM Alerts:
+We can either use Sentinel or Splunk or any other SIEM alerts but since we are using SOC simulations from THM, we can get the SPlunk screenshots but if anyone working on logs below will be useful:
+
+### ✅ 1. Using Email Logs (e.g., Splunk, Sentinel, Exchange Logs)
+If your organization logs email activity, search for link-click tracking events. Some email security gateways (like Proofpoint, Microsoft Defender for Office 365, or Mimecast) track clicks.
+
+Splunk Example:
+
+```index=email_logs
+email="c.allen@thetrydaily.thm"
+| where subject="Unusual Sign-In Activity on Your Microsoft Account"
+| search clicked_url="*m1crosoftsupport.co*"
+```
+
+Microsoft Sentinel (via Advanced Hunting or OfficeActivity):
+
+```EmailUrlInfo
+| where RecipientEmailAddress == "c.allen@thetrydaily.thm"
+| where Url contains "m1crosoftsupport.co"
+```
+
+
+### ✅ 2. Using Proxy Logs / Web Filtering (e.g., Zscaler, Bluecoat, Palo Alto, etc.)
+These tools track HTTP/S requests made by internal users.
+
+Search by Destination URL or Domain:
+
+```
+index=proxy_logs OR index=web_traffic
+user="c.allen@thetrydaily.thm"
+| search url="*m1crosoftsupport.co*"
+```
+
+Or in KQL (if using Microsoft Defender for Endpoint):
+
+```
+DeviceNetworkEvents
+| where RemoteUrl contains "m1crosoftsupport.co"
+| where InitiatingProcessAccountName == "c.allen"
+```
+
+### ✅ 3. Using Microsoft Defender for Endpoint Logs
+If you're using MDE, you can check whether the endpoint attempted to access the link:
+
+
+```kusto
+DeviceNetworkEvents
+| where InitiatingProcessCommandLine contains "browser"
+| where RemoteUrl has "m1crosoftsupport.co"
+| where AccountName contains "c.allen"
+```
+
+### ✅ 4. Using Email Security Platform Logs (Defender for O365, Mimecast, Proofpoint)
+
+### These tools show:
+- Click time
+- Device/IP
+- User
+- Redirect attempts
+
+### Look for logs under:
+- URL Clicked
+- Safe Link Clicked
+- User Action: Clicked/Blocked
+
+
+
+---
 
 ## ✅ Reason for Classifying as True Positive:
 - The domain `m1crosoftsupport.co` is a **malicious impersonation** of Microsoft using typo-squatting.
