@@ -85,6 +85,14 @@ June 18th 2025 between 01:17:23 and 01:18:32 UTC
   <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs1.png" width="450">
 </div>
 
+
+<div align="center">
+  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs2.png" width="450" />
+</div>
+
+<div align="center">
+  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/SplunkLogs1.png" width="450" />
+</div>
 ---
 
 ## 🚨 Reason for Escalating the Alert:
