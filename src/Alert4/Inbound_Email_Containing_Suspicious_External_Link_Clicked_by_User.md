@@ -7,10 +7,10 @@ This alert was triggered when an inbound phishing email reached the user’s mai
 Upon review of the **firewall logs**, it was observed that the internal user device (`10.20.2.25`) made an outbound HTTPS connection to the phishing domain (`45.148.10.131`) confirming that the link was clicked. Although the phishing site currently returns a DNS resolution failure, this does not negate the threat it posed at the time of delivery.
 
 <div align="center">
-<img src=../../Alert4/AlertAssignment.png width="300">
+  <img src="https://github.com/Bharathkasyap/SOC_Simulations_Case_Reprots/blob/main/src/Alert4/AlertAssignment.png" width="800" />
 </div>
 
-</br>
+<br>
 ---
 
 ## 🕒 Time of activity:
