@@ -90,7 +90,8 @@ If your organization logs email activity, search for link-click tracking events.
 
 Splunk Example:
 
-```index=email_logs
+```
+index=email_logs
 email="c.allen@thetrydaily.thm"
 | where subject="Unusual Sign-In Activity on Your Microsoft Account"
 | search clicked_url="*m1crosoftsupport.co*"
@@ -98,7 +99,8 @@ email="c.allen@thetrydaily.thm"
 
 Microsoft Sentinel (via Advanced Hunting or OfficeActivity):
 
-```EmailUrlInfo
+```kusto
+EmailUrlInfo
 | where RecipientEmailAddress == "c.allen@thetrydaily.thm"
 | where Url contains "m1crosoftsupport.co"
 ```
@@ -117,7 +119,7 @@ user="c.allen@thetrydaily.thm"
 
 Or in KQL (if using Microsoft Defender for Endpoint):
 
-```
+```kusto
 DeviceNetworkEvents
 | where RemoteUrl contains "m1crosoftsupport.co"
 | where InitiatingProcessAccountName == "c.allen"
